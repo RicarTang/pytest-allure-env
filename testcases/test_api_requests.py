@@ -7,7 +7,7 @@ class TestApi:
     s = requests.session()
 
     def test_user_users(self):
-        result = self.s.get('http://127.0.0.1:4000/user/users')
+        result = self.s.get('http://172.17.0.1:4000/user/users')
         print(result.json())
 
 
@@ -18,7 +18,7 @@ class TestApi:
         )
     def test_user_create(self,data):
         result = self.s.post(
-            url='http://127.0.0.1:4000/user/users',
+            url='http://172.17.0.1:4000/user/users',
             json=data
         )
         print(result.json())
